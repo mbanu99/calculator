@@ -6,7 +6,7 @@ pipeline {
         stage("Setup script") {
             steps {
                 sh """
-                    pip install pytest
+                    yum install pytest
                 """
             } //steps
         } //stage
@@ -21,7 +21,7 @@ pipeline {
     post {
         always {
             sh """
-                pip uninstall pytest -y
+                yum uninstall pytest -y
             """
         } //always
     } //post
