@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh """
                     sudo yum install -y python-pip
-                    pip2 install --upgrade pip2
+                    pip install --upgrade pip
                     pip2 install pytest
                 """
             } //steps
