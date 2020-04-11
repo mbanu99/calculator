@@ -6,7 +6,7 @@ pipeline {
         stage("Setup script") {
             steps {
                 sh """
-                    yum install -y python-pip
+                    sudo yum install -y python-pip
                     pip install --upgrade pip4
                     pip install pytest
                 """
