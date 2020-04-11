@@ -6,16 +6,16 @@ pipeline {
         stage("Setup script") {
             steps {
                 sh """
-                    sudo yum install -y python-pip3
-                    pip3 install --upgrade pip3
-                    pip3 install pytest
+                    sudo yum install -y python-pip
+                    pip2 install --upgrade pip2
+                    pip2 install pytest
                 """
             } //steps
         } //stage
         stage("Run unit test") {
             steps {
                 sh """
-                    python3 -m pytest
+                    python2 -m pytest
                 """
             } //steps
         } //stage
@@ -23,7 +23,7 @@ pipeline {
     post {
         always {
             sh """
-                sudo pip3 uninstall pytest -y
+                sudo pip2 uninstall pytest -y
             """
         } //always
     } //post
